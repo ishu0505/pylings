@@ -14,7 +14,6 @@ Mentor: open Claude Code / Codex in this folder and say "check and correct".
 This one already passes. Delete the marker below and save.
 """
 
-# I AM NOT DONE
 
 # Concept Tip: tests are just functions starting with `test_` that use `assert`.
 

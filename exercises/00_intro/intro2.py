@@ -7,14 +7,14 @@ and what the test expected. Fix `greet` so it goes GREEN.
 Run:  uv run pylings run intro2      Hint: uv run pylings hint intro2
 """
 
-# I AM NOT DONE
 
 # Concept Tip: f-strings embed expressions: f"{x} + {y} = {x + y}"
 
 
 def greet(name: str) -> str:
     # TODO: fix the bug
-    return f"Hello {name}"
+    name = name.strip()
+    return f"Hello, {name}!"
 
 
 # ---------------------------------------------------------------- tests

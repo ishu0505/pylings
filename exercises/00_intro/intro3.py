@@ -10,7 +10,6 @@ Rules: at least 2 test functions, named test_*, taking no arguments.
 Run:  uv run pylings run intro3      Hint: uv run pylings hint intro3
 """
 
-# I AM NOT DONE
 
 # Concept Tip: a good test suite checks normal cases AND boundaries (0, negatives).
 
@@ -21,3 +20,14 @@ def is_even(n: int) -> bool:
 
 # ---------------------------------------------------------------- tests
 # TODO: write your tests below.
+
+def test_is_even():
+    assert is_even(4) == True
+    assert is_even(7) == False
+
+def test_neg_even():
+    assert is_even(-5) == False
+    assert is_even(-2) == True
+
+def test_zero():
+    assert is_even(0) == True

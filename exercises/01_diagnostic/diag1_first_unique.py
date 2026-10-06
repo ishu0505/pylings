@@ -6,7 +6,6 @@ If every character repeats, return -1.
 Goal: O(n) time, O(1) auxiliary space (character set <= 26).
 """
 
-# I AM NOT DONE
 
 # Concept Tip: A single-pass removal trick fails on 3+ repeats ('aaa' vs 'aaab').
 # Two passes with a frequency count is clean and optimal.
@@ -14,7 +13,24 @@ Goal: O(n) time, O(1) auxiliary space (character set <= 26).
 
 def first_unique_char(s: str) -> int:
     # TODO: implement
-    raise NotImplementedError
+    s_map = {}
+
+    for index , alphabet in enumerate(s):
+        if alphabet in s_map:
+            s_map[alphabet] +=1
+        else:
+            s_map[alphabet] = 1
+    # print(s_map)
+
+    for i , a in enumerate(s):
+        if a in s_map and s_map[a] == 1:
+            print(i)
+            return  i
+
+    return -1
+
+
+    # raise NotImplementedError
 
 
 # ---------------------------------------------------------------- tests
