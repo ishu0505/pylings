@@ -1,0 +1,45 @@
+title = "FastAPI for Production"
+
+[[exercises]]
+name = "fastapi1_hello_world"
+title = "FastAPI App and TestClient verification"
+difficulty = "easy"
+tags = ["fastapi", "endpoints"]
+hints = [
+  "Use `app = FastAPI()`.",
+  "Use `@app.get('/health')` returning a dict."
+]
+
+[[exercises]]
+name = "fastapi2_pydantic_routes"
+title = "Pydantic Schemas & Status Codes (201, 404, 422)"
+difficulty = "medium"
+tags = ["fastapi", "pydantic"]
+hints = [
+  "Use `status_code=201` on `@app.post`.",
+  "Raise `HTTPException(status_code=404, detail='Not found')` when item is missing."
+]
+
+[[exercises]]
+name = "fastapi3_dependency_injection"
+title = "Dependency Injection with Depends and dependency_overrides"
+difficulty = "medium"
+tags = ["fastapi", "dependencies"]
+hints = [
+  "Define `def get_db(): return real_db`.",
+  "In routes: `db = Depends(get_db)`.",
+  "In test overrides: `app.dependency_overrides[get_db] = get_test_db`."
+]
+
+[[exercises]]
+name = "fastapi4_testclient_tdd"
+title = "Write TestClient tests for an endpoint (TDD mode)"
+difficulty = "medium"
+mode = "tdd"
+target = "calculate_discount"
+min_tests = 3
+tags = ["fastapi", "tdd"]
+hints = [
+  "Write tests calling POST /checkout with TestClient.",
+  "Verify: valid promo code discount, zero discount when no promo, and discount caps at total."
+]

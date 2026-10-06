@@ -1,0 +1,31 @@
+title = "Backtracking & Recursion (NeetCode)"
+
+[[exercises]]
+name = "subsets"
+title = "Subsets — generate the power set"
+difficulty = "medium"
+tags = ["neetcode", "backtracking"]
+hints = [
+  "At each element i, make two recursive choices: include `nums[i]` or exclude it.",
+  "Total subsets for n elements is 2^n."
+]
+
+[[exercises]]
+name = "combination_sum"
+title = "Combination Sum — candidate reuse backtracking"
+difficulty = "medium"
+tags = ["neetcode", "backtracking"]
+hints = [
+  "If remaining target == 0, record path.",
+  "You can choose `candidates[i]` multiple times: pass `i` to next recursive call."
+]
+
+[[exercises]]
+name = "permutations"
+title = "Permutations — orderings of distinct numbers"
+difficulty = "medium"
+tags = ["neetcode", "backtracking"]
+hints = [
+  "Base case: len(nums) == 0 returns [[]].",
+  "Or pop each element, recurse on remaining, and prepend the popped element."
+]

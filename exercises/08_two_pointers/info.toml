@@ -1,0 +1,51 @@
+title = "Two Pointers (NeetCode)"
+
+[[exercises]]
+name = "valid_palindrome"
+title = "Valid Palindrome — alphanumeric two pointers"
+difficulty = "easy"
+tags = ["neetcode", "two_pointers"]
+hints = [
+  "Use two pointers l = 0 and r = len(s) - 1.",
+  "Skip non-alphanumeric chars with `c.isalnum()`. Compare characters lowercase."
+]
+
+[[exercises]]
+name = "two_sum_ii"
+title = "Two Sum II — sorted array 1-indexed"
+difficulty = "medium"
+tags = ["neetcode", "two_pointers"]
+hints = [
+  "Array is sorted! Start with l = 0 and r = len(numbers) - 1.",
+  "Return 1-indexed positions: `[l + 1, r + 1]`."
+]
+
+[[exercises]]
+name = "three_sum"
+title = "3Sum — eliminate duplicate triplets"
+difficulty = "medium"
+tags = ["neetcode", "two_pointers"]
+hints = [
+  "Sort nums first. For each index i, run Two Sum II on the remainder of the array.",
+  "Skip duplicates for i with `if i > 0 and nums[i] == nums[i-1]: continue`."
+]
+
+[[exercises]]
+name = "container_with_most_water"
+title = "Container With Most Water — greedy two pointers"
+difficulty = "medium"
+tags = ["neetcode", "two_pointers"]
+hints = [
+  "Area is `(r - l) * min(height[l], height[r])`.",
+  "Always advance the pointer that points to the shorter bar."
+]
+
+[[exercises]]
+name = "trapping_rain_water"
+title = "Trapping Rain Water — optimal two pointers"
+difficulty = "hard"
+tags = ["neetcode", "two_pointers"]
+hints = [
+  "Water trapped above bar i is `min(max_left, max_right) - height[i]`.",
+  "Maintain `max_l` and `max_r`. Move the pointer with smaller max."
+]

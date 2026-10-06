@@ -1,0 +1,51 @@
+title = "Binary Search (NeetCode)"
+
+[[exercises]]
+name = "binary_search"
+title = "Binary Search — standard O(log n)"
+difficulty = "easy"
+tags = ["neetcode", "binary_search"]
+hints = [
+  "Use lo = 0, hi = len(nums) - 1.",
+  "mid = (lo + hi) // 2. If nums[mid] == target, return mid."
+]
+
+[[exercises]]
+name = "search_2d_matrix"
+title = "Search a 2D Matrix — flatten index mapping"
+difficulty = "medium"
+tags = ["neetcode", "binary_search"]
+hints = [
+  "Treat the m x n matrix as a 1D array of length m * n.",
+  "Index mid maps to `row = mid // n`, `col = mid % n`."
+]
+
+[[exercises]]
+name = "koko_eating_bananas"
+title = "Koko Eating Bananas — binary search on answer"
+difficulty = "medium"
+tags = ["neetcode", "binary_search"]
+hints = [
+  "Search speed k between 1 and max(piles).",
+  "Hours required for speed k is `sum(math.ceil(p / k) for p in piles)`."
+]
+
+[[exercises]]
+name = "search_in_rotated_sorted_array"
+title = "Search in Rotated Sorted Array — half sorted check"
+difficulty = "medium"
+tags = ["neetcode", "binary_search"]
+hints = [
+  "At least one half [lo, mid] or [mid, hi] must be sorted.",
+  "Determine which half is sorted, then check if target lies in that range."
+]
+
+[[exercises]]
+name = "time_based_key_value_store"
+title = "Time Based Key-Value Store — binary search on timestamps"
+difficulty = "medium"
+tags = ["neetcode", "binary_search"]
+hints = [
+  "Store `{key: [(timestamp, value), ...]}`.",
+  "Timestamps are strictly increasing, so use binary search to find the largest timestamp <= target."
+]

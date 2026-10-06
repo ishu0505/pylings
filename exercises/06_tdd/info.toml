@@ -1,0 +1,81 @@
+title = "Test-Driven Development"
+
+[[exercises]]
+name = "tdd1_red_green"
+title = "Red to Green: implement against a given test specification"
+difficulty = "easy"
+tags = ["tdd", "red_green"]
+hints = [
+  "Calculate item subtotal first: sum(price * qty).",
+  "Apply discount code: 'SAVE10' -> 10% off; 'HALF' -> 50% off; unknown -> 0% off."
+]
+
+[[exercises]]
+name = "tdd2_slugify"
+title = "Write tests that catch bugs in slugify"
+difficulty = "medium"
+mode = "tdd"
+target = "slugify"
+min_tests = 3
+tags = ["tdd", "mutation"]
+hints = [
+  "Write tests for: normal string, uppercase letters, punctuation/special characters, and multiple spaces.",
+  "Write at least 3 zero-argument test_* functions."
+]
+
+[[exercises]]
+name = "tdd3_error_testing"
+title = "Write tests asserting exceptions with pytest.raises"
+difficulty = "medium"
+mode = "tdd"
+target = "transfer_funds"
+min_tests = 3
+tags = ["tdd", "exceptions"]
+hints = [
+  "Use `with pytest.raises(ValueError):` to verify invalid amounts.",
+  "Test normal successful transfer and both source/destination balances."
+]
+
+[[exercises]]
+name = "tdd4_parametrize_fixtures"
+title = "Data-driven tests with pytest.mark.parametrize and fixtures"
+difficulty = "medium"
+tags = ["tdd", "fixtures"]
+hints = [
+  "Use `@pytest.fixture` to set up test objects.",
+  "Use `@pytest.mark.parametrize('input,expected', [...])` to test multiple inputs cleanly."
+]
+
+[[exercises]]
+name = "tdd5_test_doubles"
+title = "Dependency injection with Fake clocks & clients"
+difficulty = "medium"
+tags = ["tdd", "fakes"]
+hints = [
+  "Inject a callable `clock` into TokenService that defaults to `time.time`.",
+  "In tests, provide a fake clock returning fixed timestamps."
+]
+
+[[exercises]]
+name = "tdd6_refactor_safety"
+title = "Refactoring safely under regression tests"
+difficulty = "medium"
+tags = ["tdd", "refactor"]
+hints = [
+  "Parse semantic version: major, minor, patch.",
+  "Compare versions as tuples: `(major, minor, patch)`."
+]
+
+[[exercises]]
+name = "tdd7_rate_counter"
+title = "Write tests to catch subtle bugs in RateCounter"
+difficulty = "hard"
+mode = "tdd"
+target = "RateCounter"
+min_tests = 3
+tags = ["tdd", "mutation"]
+hints = [
+  "Test recording at different timestamps.",
+  "Test count() with window boundaries: events strictly older than (now - window) must be excluded.",
+  "Verify events recorded at the exact boundary are counted properly."
+]

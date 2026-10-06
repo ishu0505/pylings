@@ -1,0 +1,21 @@
+title = "Tries (NeetCode)"
+
+[[exercises]]
+name = "implement_trie"
+title = "Implement Trie (Prefix Tree)"
+difficulty = "medium"
+tags = ["neetcode", "trie"]
+hints = [
+  "Create a TrieNode with `children = {}` and `is_word = False`.",
+  "`insert`, `search`, and `starts_with` traverse down characters."
+]
+
+[[exercises]]
+name = "design_add_and_search_words"
+title = "Design Add and Search Words — wildcard '.' trie matching"
+difficulty = "medium"
+tags = ["neetcode", "trie", "dfs"]
+hints = [
+  "When encountering '.', branch DFS over all existing child nodes `curr.children.values()`.",
+  "Normal characters advance to `curr.children[c]`."
+]

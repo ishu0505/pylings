@@ -1,0 +1,51 @@
+title = "Sliding Window (NeetCode)"
+
+[[exercises]]
+name = "best_time_to_buy_sell_stock"
+title = "Best Time to Buy and Sell Stock — one pass min tracking"
+difficulty = "easy"
+tags = ["neetcode", "sliding_window"]
+hints = [
+  "Track the minimum price seen so far as you iterate.",
+  "Profit = `current_price - min_price`. Maximize profit."
+]
+
+[[exercises]]
+name = "longest_substring_without_repeating"
+title = "Longest Substring Without Repeating Characters"
+difficulty = "medium"
+tags = ["neetcode", "sliding_window"]
+hints = [
+  "Use a set `seen` of characters inside the current window `[l, r]`.",
+  "While `s[r] in seen`, remove `s[l]` and increment `l`."
+]
+
+[[exercises]]
+name = "longest_repeating_character_replacement"
+title = "Longest Repeating Character Replacement"
+difficulty = "medium"
+tags = ["neetcode", "sliding_window"]
+hints = [
+  "Window is valid if `(window_len - max_freq) <= k`.",
+  "Keep count of frequencies in window; increment l if replacements exceed k."
+]
+
+[[exercises]]
+name = "permutation_in_string"
+title = "Permutation in String — fixed sliding window"
+difficulty = "medium"
+tags = ["neetcode", "sliding_window"]
+hints = [
+  "Window size is fixed at len(s1).",
+  "Slide window over s2 comparing character counts."
+]
+
+[[exercises]]
+name = "minimum_window_substring"
+title = "Minimum Window Substring — variable window with match tracking"
+difficulty = "hard"
+tags = ["neetcode", "sliding_window"]
+hints = [
+  "Count requirements of t. Keep `have` matching characters count.",
+  "Once `have == need`, shrink from left to find minimum valid window."
+]

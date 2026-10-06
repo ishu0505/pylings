@@ -1,0 +1,64 @@
+title = "Diagnostic — Baseline & Level Check"
+
+[[exercises]]
+name = "diag1_first_unique"
+title = "First unique character (O(n) time, 3+ repeats)"
+difficulty = "easy"
+tags = ["diagnoses:02_basics", "diagnoses:07_arrays_hashing"]
+hints = [
+  "Approach: count the frequencies of every character first, then make a second pass over the string.",
+  "Optimization: a single pass with deletion tricks fails on 3+ duplicates ('aaab'). Two passes with a dict/Counter is O(n) time and O(k) space (k <= 26).",
+]
+
+[[exercises]]
+name = "diag2_top_k_words"
+title = "Top-K frequent words (tie-break alphabetically)"
+difficulty = "easy"
+tags = ["diagnoses:03_pythonic", "diagnoses:07_arrays_hashing"]
+hints = [
+  "Approach: count words using collections.Counter or a dict, then sort items.",
+  "Optimization: in Python, tuples sort element by element. To sort by highest frequency first and tie-break alphabetically: key=lambda item: (-item[1], item[0]).",
+]
+
+[[exercises]]
+name = "diag3_stack_class"
+title = "Stack class wrapping a list + dunder methods"
+difficulty = "medium"
+tags = ["diagnoses:04_oop"]
+hints = [
+  "Approach: keep an internal list `self._items = []`. `push` appends, `pop` removes from the end.",
+  "Edge cases: raise IndexError if pop() or peek() is called on an empty stack. Implement __len__, __repr__, and __bool__.",
+]
+
+[[exercises]]
+name = "diag4_longest_consecutive"
+title = "Longest consecutive sequence in O(n) time"
+difficulty = "medium"
+tags = ["diagnoses:07_arrays_hashing", "neetcode"]
+hints = [
+  "Approach: put all numbers in a set for O(1) membership lookups.",
+  "Optimization: only start counting a streak from `num` if `(num - 1) not in num_set`. This guarantees each sequence is explored once -> O(n) total time.",
+]
+
+[[exercises]]
+name = "diag5_clamp_tdd"
+title = "Write tests to catch bugs in clamp(val, low, high)"
+difficulty = "easy"
+mode = "tdd"
+target = "clamp"
+min_tests = 3
+tags = ["diagnoses:06_tdd"]
+hints = [
+  "Approach: test when val is between low and high, when val < low, and when val > high.",
+  "Edge cases: test boundaries where val == low and val == high. Make sure invalid low > high raises ValueError.",
+]
+
+[[exercises]]
+name = "diag6_validate_user"
+title = "Input validation with custom ValidationError"
+difficulty = "easy"
+tags = ["diagnoses:05_errors_typing"]
+hints = [
+  "Approach: create class ValidationError(Exception) that stores an errors dict.",
+  "Validation rules: username must be non-empty string, age must be an int >= 18, email must contain '@'. Raise ValidationError if any fail.",
+]

@@ -1,0 +1,51 @@
+title = "AI Backend Patterns"
+
+[[exercises]]
+name = "ai1_retry_backoff"
+title = "Exponential Backoff with Jitter for LLM APIs"
+difficulty = "medium"
+tags = ["ai_backend", "resilience"]
+hints = [
+  "Backoff delay formula: `min(max_delay, base_delay * (2 ** attempt)) + jitter`.",
+  "Retry only on retryable exceptions (e.g. RateLimitError)."
+]
+
+[[exercises]]
+name = "ai2_structured_output"
+title = "Structured Output Parsing with Automatic Re-prompting"
+difficulty = "medium"
+tags = ["ai_backend", "pydantic", "structured_output"]
+hints = [
+  "Try `TargetModel.model_validate_json(raw)`.",
+  "If validation fails, call `llm_fn(prompt + error)` once to retry."
+]
+
+[[exercises]]
+name = "ai3_rag_chunking"
+title = "Text Chunking for Retrieval-Augmented Generation (RAG)"
+difficulty = "medium"
+tags = ["ai_backend", "rag", "chunking"]
+hints = [
+  "Split text into words.",
+  "Slide window of `chunk_size` words with `overlap` step: `step = chunk_size - overlap`."
+]
+
+[[exercises]]
+name = "ai4_vector_similarity"
+title = "In-Memory Vector Search: Cosine Similarity Top-K"
+difficulty = "medium"
+tags = ["ai_backend", "vector_search"]
+hints = [
+  "Cosine similarity: `dot_product(u, v) / (norm(u) * norm(v))`.",
+  "Norm: `math.sqrt(sum(x * x for x in u))`."
+]
+
+[[exercises]]
+name = "ai5_streaming_tokens"
+title = "Server-Sent Events (SSE) Token Streaming with FastAPI"
+difficulty = "medium"
+tags = ["ai_backend", "streaming", "sse"]
+hints = [
+  "SSE event line format: `f'data: {token}\n\n'`.",
+  "Use `StreamingResponse(generator(), media_type='text/event-stream')`."
+]

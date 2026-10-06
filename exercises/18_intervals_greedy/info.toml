@@ -1,0 +1,31 @@
+title = "Intervals & Greedy (NeetCode)"
+
+[[exercises]]
+name = "maximum_subarray"
+title = "Maximum Subarray — Kadane's Algorithm"
+difficulty = "medium"
+tags = ["neetcode", "greedy", "kadane"]
+hints = [
+  "Track `current_sum` and `max_sum`.",
+  "If `current_sum < 0`, reset `current_sum = 0`."
+]
+
+[[exercises]]
+name = "merge_intervals"
+title = "Merge Intervals — sorted start times"
+difficulty = "medium"
+tags = ["neetcode", "intervals"]
+hints = [
+  "Sort intervals by start time `intervals.sort(key=lambda x: x[0])`.",
+  "Compare current interval start with previous interval end: if start <= prev_end, merge!"
+]
+
+[[exercises]]
+name = "meeting_rooms_ii"
+title = "Meeting Rooms II — min rooms required"
+difficulty = "medium"
+tags = ["neetcode", "intervals", "heap"]
+hints = [
+  "Sort start times and end times separately.",
+  "Advance two pointers `s` and `e`. If start < end, need new room (`count += 1`)."
+]

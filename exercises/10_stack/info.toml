@@ -1,0 +1,51 @@
+title = "Stack (NeetCode)"
+
+[[exercises]]
+name = "valid_parentheses"
+title = "Valid Parentheses — bracket matching"
+difficulty = "easy"
+tags = ["neetcode", "stack"]
+hints = [
+  "Use a stack for open brackets. Use a dict mapping closing -> opening.",
+  "If stack is empty on closing bracket or doesn't match top, return False."
+]
+
+[[exercises]]
+name = "min_stack"
+title = "Min Stack — O(1) minimum retrieval"
+difficulty = "medium"
+tags = ["neetcode", "stack"]
+hints = [
+  "Maintain a second stack `min_stack` that stores the minimum value at each depth.",
+  "Or store tuples `(val, current_min)` in a single stack."
+]
+
+[[exercises]]
+name = "daily_temperatures"
+title = "Daily Temperatures — monotonic stack"
+difficulty = "medium"
+tags = ["neetcode", "monotonic_stack"]
+hints = [
+  "Maintain a stack of indices with decreasing temperatures.",
+  "When current temperature > stack[-1], pop and record `curr_index - prev_index`."
+]
+
+[[exercises]]
+name = "car_fleet"
+title = "Car Fleet — time to arrival calculation"
+difficulty = "medium"
+tags = ["neetcode", "stack"]
+hints = [
+  "Sort cars by starting position in reverse order (closest to target first).",
+  "Calculate time to reach target: `(target - pos) / speed`. If a car arrives faster or equal to the car ahead, it merges into that fleet."
+]
+
+[[exercises]]
+name = "largest_rectangle_in_histogram"
+title = "Largest Rectangle in Histogram — monotonic stack"
+difficulty = "hard"
+tags = ["neetcode", "stack"]
+hints = [
+  "Maintain a monotonic increasing stack storing `(start_index, height)`.",
+  "When current bar < top bar, pop and calculate area `height * (i - start_index)`."
+]

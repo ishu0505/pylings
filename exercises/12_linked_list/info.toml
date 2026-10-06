@@ -1,0 +1,51 @@
+title = "Linked Lists (NeetCode)"
+
+[[exercises]]
+name = "linked_list_from_scratch"
+title = "Singly Linked List from Scratch — pointers & dunders"
+difficulty = "medium"
+tags = ["dsa", "linked_list"]
+hints = [
+  "Create a Node class with `val` and `next`.",
+  "Maintain `self.head` and `self.tail`."
+]
+
+[[exercises]]
+name = "reverse_linked_list"
+title = "Reverse Linked List — iterative pointer manipulation"
+difficulty = "easy"
+tags = ["neetcode", "linked_list"]
+hints = [
+  "Use three pointers: `prev = None`, `curr = head`, `nxt = curr.next`.",
+  "Set `curr.next = prev`, then advance `prev = curr` and `curr = nxt`."
+]
+
+[[exercises]]
+name = "merge_two_sorted_lists"
+title = "Merge Two Sorted Lists — dummy head pointer"
+difficulty = "easy"
+tags = ["neetcode", "linked_list"]
+hints = [
+  "Create a dummy node `dummy = ListNode(0)`.",
+  "Compare `list1.val` and `list2.val`, attach the smaller one, and advance."
+]
+
+[[exercises]]
+name = "linked_list_cycle"
+title = "Linked List Cycle — Floyd's Tortoise and Hare"
+difficulty = "easy"
+tags = ["neetcode", "linked_list"]
+hints = [
+  "Use slow = head, fast = head.",
+  "slow advances 1 step; fast advances 2 steps. If they collide, there is a cycle."
+]
+
+[[exercises]]
+name = "lru_cache"
+title = "LRU Cache — Doubly Linked List + Hash Map"
+difficulty = "hard"
+tags = ["neetcode", "lru_cache", "dsa"]
+hints = [
+  "Use a doubly linked list with dummy head and dummy tail for O(1) removal/insertion.",
+  "Use a dict mapping key -> Node for O(1) lookups."
+]

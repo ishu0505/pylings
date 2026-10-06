@@ -1,0 +1,41 @@
+title = "Queue Workers: SQS & SNS"
+
+[[exercises]]
+name = "sqs1_basic_queue"
+title = "SQS Queue: Send, Receive, and Delete with Boto3 & Moto"
+difficulty = "easy"
+tags = ["sqs", "boto3", "moto"]
+hints = [
+  "Use `sqs = boto3.client('sqs')`.",
+  "Delete message using `ReceiptHandle=msg['ReceiptHandle']`."
+]
+
+[[exercises]]
+name = "sqs2_message_envelope"
+title = "Parsing SQS JSON Payloads with Pydantic"
+difficulty = "medium"
+tags = ["sqs", "pydantic"]
+hints = [
+  "Parse message body JSON with `TaskEnvelope.model_validate_json(body)`.",
+  "Catch `pydantic.ValidationError` or `json.JSONDecodeError` for poison messages."
+]
+
+[[exercises]]
+name = "sqs3_worker_loop"
+title = "Robust SQS Worker: Process and delete on success, leave on failure"
+difficulty = "medium"
+tags = ["sqs", "worker"]
+hints = [
+  "If `handler(body)` succeeds without raising, call `sqs.delete_message`.",
+  "If handler raises an exception, do NOT delete the message so SQS can retry it."
+]
+
+[[exercises]]
+name = "sqs4_idempotent_consumer"
+title = "Idempotent Message Processing with Deduplication Store"
+difficulty = "medium"
+tags = ["sqs", "idempotency"]
+hints = [
+  "Check if `message_id` is already in processed_ids.",
+  "If already processed, skip handler and mark as duplicate."
+]

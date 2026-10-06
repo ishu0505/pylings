@@ -1,0 +1,73 @@
+title = "Classes, Dunders & OOP"
+
+[[exercises]]
+name = "oop1_classes_instances"
+title = "Classes, __init__, and instance vs class attributes"
+difficulty = "easy"
+tags = ["oop", "classes"]
+hints = [
+  "Use `self.balance` for instance state.",
+  "Class attributes are defined on the class body (e.g. `interest_rate = 0.05`)."
+]
+
+[[exercises]]
+name = "oop2_dunder_methods"
+title = "Dunder methods: __repr__, __eq__, __len__, __getitem__, __contains__"
+difficulty = "medium"
+tags = ["oop", "dunders"]
+hints = [
+  "__repr__ returns an unambiguous string e.g. Playlist(name='Rock', songs=[...])",
+  "__getitem__ enables `playlist[0]` indexing.",
+  "__contains__ enables `'song' in playlist` syntax."
+]
+
+[[exercises]]
+name = "oop3_properties"
+title = "@property and setter validation"
+difficulty = "easy"
+tags = ["oop", "properties"]
+hints = [
+  "Use `@property` on `def price(self): return self._price`.",
+  "Use `@price.setter` on `def price(self, value): ...` to validate."
+]
+
+[[exercises]]
+name = "oop4_class_static_methods"
+title = "Alternate constructors with @classmethod"
+difficulty = "easy"
+tags = ["oop", "classmethod"]
+hints = [
+  "`@classmethod` takes `cls` as the first argument.",
+  "Call `return cls(...)` to instantiate from inside a classmethod."
+]
+
+[[exercises]]
+name = "oop5_dataclasses"
+title = "Dataclasses with defaults, factories, and immutability"
+difficulty = "easy"
+tags = ["oop", "dataclasses"]
+hints = [
+  "Use `@dataclass(frozen=True)` for immutability.",
+  "Use `field(default_factory=list)` for mutable collections inside a dataclass."
+]
+
+[[exercises]]
+name = "oop6_protocol_abc"
+title = "Structural subtyping with Protocol & Repository pattern"
+difficulty = "medium"
+tags = ["oop", "protocol"]
+hints = [
+  "Inherit from `typing.Protocol` to define an interface without explicit inheritance.",
+  "Implement `save(item)` and `get_by_id(id)` on `InMemoryRepository`."
+]
+
+[[exercises]]
+name = "oop7_dynamic_array"
+title = "Build DynamicArray from scratch (capacity doubling)"
+difficulty = "hard"
+tags = ["oop", "dsa", "memory"]
+hints = [
+  "Start with capacity = 2, size = 0, and internal list `[None] * capacity`.",
+  "When size == capacity on append, double capacity and copy items into a new internal buffer.",
+  "`insert(index, val)` shifts elements from index to size-1 to the right."
+]

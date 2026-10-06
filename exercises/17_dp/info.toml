@@ -1,0 +1,41 @@
+title = "Dynamic Programming (NeetCode)"
+
+[[exercises]]
+name = "climbing_stairs"
+title = "Climbing Stairs — 1D DP Fibonacci pattern"
+difficulty = "easy"
+tags = ["neetcode", "dp"]
+hints = [
+  "Ways to reach step n is `ways(n-1) + ways(n-2)`.",
+  "Compute iteratively with two variables: O(n) time, O(1) space."
+]
+
+[[exercises]]
+name = "house_robber"
+title = "House Robber — non-adjacent maximum DP"
+difficulty = "medium"
+tags = ["neetcode", "dp"]
+hints = [
+  "At house i, you either rob it `nums[i] + rob(i-2)` or skip it `rob(i-1)`.",
+  "Track two variables `prev1` and `prev2`. O(n) time, O(1) space."
+]
+
+[[exercises]]
+name = "coin_change"
+title = "Coin Change — unbounded knapsack fewest coins"
+difficulty = "medium"
+tags = ["neetcode", "dp"]
+hints = [
+  "Initialize `dp = [float('inf')] * (amount + 1)`; `dp[0] = 0`.",
+  "For each coin and amount a: `dp[a] = min(dp[a], 1 + dp[a - coin])`."
+]
+
+[[exercises]]
+name = "longest_increasing_subsequence"
+title = "Longest Increasing Subsequence — classic LIS"
+difficulty = "medium"
+tags = ["neetcode", "dp"]
+hints = [
+  "Bottom-up: `dp[i]` = length of LIS starting at or ending at index i.",
+  "Or maintain an active smallest tail array using `bisect_left` for O(n log n)."
+]

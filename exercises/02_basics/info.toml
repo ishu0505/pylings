@@ -1,0 +1,62 @@
+title = "Python Basics, Fast"
+
+[[exercises]]
+name = "basics1_truthiness"
+title = "Truthiness, None checks, and identity vs equality"
+difficulty = "easy"
+tags = ["basics", "truthiness"]
+hints = [
+  "Use `is None` to check specifically for None.",
+  "Use `bool(val)` to get the truthiness of any value."
+]
+
+[[exercises]]
+name = "basics2_strings_slicing"
+title = "String manipulation, slicing, and f-strings"
+difficulty = "easy"
+tags = ["basics", "strings"]
+hints = [
+  "Use slicing `s[start:stop:step]` — e.g. `s[::-1]` reverses a string.",
+  "In f-strings, format float decimals using `{num:.2f}`."
+]
+
+[[exercises]]
+name = "basics3_loops_control"
+title = "Control flow with enumerate, zip, and range"
+difficulty = "easy"
+tags = ["basics", "loops"]
+hints = [
+  "Use `enumerate(iterable, start=...)` to get index and element together.",
+  "Use `zip(list1, list2)` to iterate through two lists in parallel."
+]
+
+[[exercises]]
+name = "basics4_functions_args"
+title = "Default argument pitfall and *args/**kwargs"
+difficulty = "medium"
+tags = ["basics", "functions"]
+hints = [
+  "Never use a mutable default like `target=[]` — it is evaluated once at definition time and shared across calls!",
+  "Use `target=None` and inside the function: `if target is None: target = []`."
+]
+
+[[exercises]]
+name = "basics5_sets_tuples"
+title = "Set operations and deduplication"
+difficulty = "easy"
+tags = ["basics", "sets"]
+hints = [
+  "Set difference `a - b` finds elements in a but not in b.",
+  "To deduplicate while preserving original order, keep a `seen = set()` and append unseen elements to a new list."
+]
+
+[[exercises]]
+name = "basics6_dicts_mapping"
+title = "Dict methods, grouping with setdefault, and sorting by value"
+difficulty = "medium"
+tags = ["basics", "dicts"]
+hints = [
+  "`d.get(key, default)` safely returns default if key is not found.",
+  "`d.setdefault(key, []).append(val)` initializes key to [] if absent, then appends.",
+  "To sort dictionary items by value descending: `sorted(d.items(), key=lambda kv: kv[1], reverse=True)`."
+]

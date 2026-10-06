@@ -1,0 +1,51 @@
+title = "Async Python & the Event Loop"
+
+[[exercises]]
+name = "async1_coroutines"
+title = "Coroutines, await, and asyncio.run"
+difficulty = "easy"
+tags = ["async", "coroutines"]
+hints = [
+  "Calling an `async def` function creates a coroutine object; it does not execute until awaited.",
+  "Use `await fetch_data()` inside an async function."
+]
+
+[[exercises]]
+name = "async2_gather"
+title = "Concurrent I/O with asyncio.gather"
+difficulty = "easy"
+tags = ["async", "gather"]
+hints = [
+  "Use `await asyncio.gather(*coroutines)` to run tasks concurrently.",
+  "Gather preserves the ordering of the input coroutines in its returned list."
+]
+
+[[exercises]]
+name = "async3_semaphore"
+title = "Capping concurrency with asyncio.Semaphore"
+difficulty = "medium"
+tags = ["async", "semaphore"]
+hints = [
+  "Use `async with semaphore:` to limit concurrent active executions.",
+  "Track active count to verify max concurrency constraint."
+]
+
+[[exercises]]
+name = "async4_queue_worker"
+title = "Producer-Consumer with asyncio.Queue"
+difficulty = "medium"
+tags = ["async", "queue"]
+hints = [
+  "Producer puts items into queue; workers get items and process them.",
+  "Call `queue.task_done()` after processing each item, and `await queue.join()` to wait for completion."
+]
+
+[[exercises]]
+name = "async5_raw_asgi"
+title = "Raw ASGI App: understanding Uvicorn under the hood"
+difficulty = "hard"
+tags = ["async", "asgi"]
+hints = [
+  "An ASGI app signature is `async def app(scope, receive, send)`.",
+  "Send http.response.start with status 200 and headers, then http.response.body."
+]

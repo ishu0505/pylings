@@ -1,0 +1,72 @@
+title = "Arrays & Hashing (NeetCode)"
+
+[[exercises]]
+name = "contains_duplicate"
+title = "Contains Duplicate — set lookup"
+difficulty = "easy"
+tags = ["neetcode", "hashset"]
+hints = [
+  "Put seen numbers into a set.",
+  "If a number is already in the set, return True. O(n) time, O(n) space."
+]
+
+[[exercises]]
+name = "valid_anagram"
+title = "Valid Anagram — frequency matching"
+difficulty = "easy"
+tags = ["neetcode", "hashmap"]
+hints = [
+  "Check length first: if len(s) != len(t), return False immediately.",
+  "Count character frequencies using collections.Counter or a dict."
+]
+
+[[exercises]]
+name = "two_sum"
+title = "Two Sum — complement lookup"
+difficulty = "easy"
+tags = ["neetcode", "hashmap"]
+hints = [
+  "For each number x, calculate complement: `target - x`.",
+  "Store `{number: index}` in a dict as you scan. O(n) time, O(n) space."
+]
+
+[[exercises]]
+name = "group_anagrams"
+title = "Group Anagrams — canonical key hashing"
+difficulty = "medium"
+tags = ["neetcode", "hashmap"]
+hints = [
+  "Sort each word or compute a 26-tuple character count to use as a dict key.",
+  "Tuple keys: `tuple(count)` or `''.join(sorted(word))`."
+]
+
+[[exercises]]
+name = "top_k_frequent"
+title = "Top K Frequent Elements — Bucket Sort O(n)"
+difficulty = "medium"
+tags = ["neetcode", "bucket_sort"]
+hints = [
+  "Count frequencies first with collections.Counter.",
+  "Use bucket sort: an array `buckets` of size len(nums)+1 where `buckets[freq]` holds numbers with that frequency."
+]
+
+[[exercises]]
+name = "product_except_self"
+title = "Product of Array Except Self — prefix and suffix products"
+difficulty = "medium"
+tags = ["neetcode", "prefix"]
+hints = [
+  "You cannot use the division operation `/`.",
+  "Compute prefix products from left to right, then suffix products from right to left in a single result array."
+]
+
+[[exercises]]
+name = "hashmap_from_scratch"
+title = "HashMap from Scratch with Separate Chaining & Resizing"
+difficulty = "hard"
+tags = ["dsa", "hashmap", "scratch"]
+hints = [
+  "Use a list of buckets where each bucket is a list of `[key, value]` pairs.",
+  "Index = `hash(key) % capacity`.",
+  "When `size / capacity > 0.75`, double capacity and rehash all pairs."
+]

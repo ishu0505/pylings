@@ -1,0 +1,35 @@
+title = "Intro — how pylings works"
+
+[[exercises]]
+name = "intro1"
+title = "Welcome: the I AM NOT DONE marker"
+difficulty = "easy"
+tags = ["intro"]
+ships_passing = true
+hints = [
+  "The tests already pass. Read the docstring, then delete the line that says `# I AM NOT DONE` and save.",
+  "pylings only moves on when tests pass AND the marker is gone — that's your 'I reviewed this' signal.",
+]
+
+[[exercises]]
+name = "intro2"
+title = "Fix a failing function"
+difficulty = "easy"
+tags = ["intro", "f-strings"]
+hints = [
+  "Read the assertion error: it shows the value you returned vs. the value the test expected.",
+  "f-strings: f\"Hello, {name}!\" — mind the comma and the exclamation mark.",
+]
+
+[[exercises]]
+name = "intro3"
+title = "Your first TDD exercise: you write the tests"
+difficulty = "easy"
+mode = "tdd"
+target = "is_even"
+min_tests = 2
+tags = ["intro", "tdd"]
+hints = [
+  "Write functions named test_something() with `assert is_even(...) == ...` inside. Test both True and False outcomes.",
+  "Edge cases catch bugs: what about 0? Negative numbers like -3 and -4?",
+]

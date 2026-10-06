@@ -1,0 +1,71 @@
+title = "Pythonic Python"
+
+[[exercises]]
+name = "pythonic1_comprehensions"
+title = "List, dict, and set comprehensions with filtering"
+difficulty = "easy"
+tags = ["pythonic", "comprehensions"]
+hints = [
+  "Dict comprehension: `{k: v for k, v in items if condition}`.",
+  "Flattening a 2D matrix: `[val for row in matrix for val in row]`."
+]
+
+[[exercises]]
+name = "pythonic2_unpacking"
+title = "Extended unpacking and star expressions"
+difficulty = "easy"
+tags = ["pythonic", "unpacking"]
+hints = [
+  "Use `first, *middle, last = items`.",
+  "Merge dicts with `merged = {**d1, **d2}` or `d1 | d2`."
+]
+
+[[exercises]]
+name = "pythonic3_generators"
+title = "Generators, yield, and chunking streams"
+difficulty = "medium"
+tags = ["pythonic", "generators"]
+hints = [
+  "A generator function uses `yield` instead of `return`.",
+  "Chunking: iterate through items and collect into a chunk; when len(chunk) == size, yield chunk and reset."
+]
+
+[[exercises]]
+name = "pythonic4_collections"
+title = "Counter, defaultdict, and deque"
+difficulty = "medium"
+tags = ["pythonic", "collections"]
+hints = [
+  "`collections.deque` has O(1) `appendleft()` and `popleft()`, while list `pop(0)` is O(n).",
+  "`collections.Counter.most_common(k)` returns the k most frequent pairs."
+]
+
+[[exercises]]
+name = "pythonic5_itertools_functools"
+title = "itertools.groupby, chain, and functools.lru_cache"
+difficulty = "medium"
+tags = ["pythonic", "itertools", "functools"]
+hints = [
+  "Note: `itertools.groupby` requires the input to be sorted by the key function first!",
+  "`@functools.lru_cache(maxsize=...)` caches pure function results by arguments."
+]
+
+[[exercises]]
+name = "pythonic6_sorting_bisect"
+title = "Multi-key sorting and bisect for logarithmic search"
+difficulty = "medium"
+tags = ["pythonic", "bisect", "sorting"]
+hints = [
+  "`bisect.bisect_left(sorted_list, x)` finds the index where x should be inserted in O(log n) time.",
+  "Sort objects or dicts by custom lambda or operator.itemgetter."
+]
+
+[[exercises]]
+name = "pythonic7_decorators"
+title = "Decorators with @functools.wraps and arguments"
+difficulty = "hard"
+tags = ["pythonic", "decorators"]
+hints = [
+  "Use `@functools.wraps(fn)` on the inner wrapper so `__name__` and `__doc__` are preserved.",
+  "A decorator with arguments needs 3 levels of nested functions: outer(args) -> decorator(fn) -> wrapper(*a, **kw)."
+]

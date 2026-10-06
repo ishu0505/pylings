@@ -1,0 +1,62 @@
+title = "Errors, Context Managers & Types"
+
+[[exercises]]
+name = "errors1_try_except"
+title = "Exception handling and chaining with from"
+difficulty = "easy"
+tags = ["errors", "exceptions"]
+hints = [
+  "Use `raise DatabaseError('db query failed') from original_exc` to chain.",
+  "Use `except (KeyError, ValueError) as e:` to catch multiple errors."
+]
+
+[[exercises]]
+name = "errors2_custom_hierarchy"
+title = "Custom domain exception hierarchy"
+difficulty = "easy"
+tags = ["errors", "hierarchy"]
+hints = [
+  "Create a base `AppError(Exception)` class.",
+  "Subclass `NotFoundError(AppError)` and `ConflictError(AppError)`."
+]
+
+[[exercises]]
+name = "errors3_context_managers"
+title = "Context managers with __enter__/__exit__ and @contextmanager"
+difficulty = "medium"
+tags = ["errors", "contextlib"]
+hints = [
+  "In `__exit__(self, exc_type, exc_val, exc_tb)`, returning `True` suppresses the exception.",
+  "Use `@contextlib.contextmanager` with a generator yielding the resource."
+]
+
+[[exercises]]
+name = "errors4_type_hints"
+title = "Modern Python 3.12 typing, TypedDict, and Generics"
+difficulty = "medium"
+tags = ["typing", "type_hints"]
+hints = [
+  "Use `class ModelConfig(TypedDict): model: str; temperature: float`.",
+  "Use `T = TypeVar('T')` or Python 3.12 syntax `def first_element[T](items: list[T]) -> T | None:`."
+]
+
+[[exercises]]
+name = "errors5_pydantic"
+title = "Pydantic v2 schemas and validation"
+difficulty = "medium"
+tags = ["pydantic", "validation"]
+hints = [
+  "Use `from pydantic import BaseModel, Field, field_validator`.",
+  "Use `@field_validator('email')` with `classmethod`."
+]
+
+[[exercises]]
+name = "errors6_result_type"
+title = "Functional Result[T, E] pattern (Rust bridge)"
+difficulty = "hard"
+tags = ["errors", "result", "rust_bridge"]
+hints = [
+  "Create classes `Ok(value)` and `Err(error)`.",
+  "`is_ok()` returns True on Ok, False on Err.",
+  "`unwrap()` returns value or raises RuntimeError(error)."
+]

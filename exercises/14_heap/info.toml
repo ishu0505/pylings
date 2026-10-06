@@ -1,0 +1,31 @@
+title = "Heaps & Priority Queues (NeetCode)"
+
+[[exercises]]
+name = "kth_largest_element_in_stream"
+title = "Kth Largest Element in a Stream — min-heap of size k"
+difficulty = "easy"
+tags = ["neetcode", "heap"]
+hints = [
+  "Keep a min-heap with exactly k elements.",
+  "When adding a new val, push it; if len > k, pop the smallest. The root `heap[0]` is the kth largest."
+]
+
+[[exercises]]
+name = "last_stone_weight"
+title = "Last Stone Weight — max-heap simulation"
+difficulty = "easy"
+tags = ["neetcode", "heap"]
+hints = [
+  "Simulate max-heap by storing `-stone`.",
+  "Pop top two stones, smash them; if difference > 0, push `-diff` back."
+]
+
+[[exercises]]
+name = "find_median_from_data_stream"
+title = "Find Median from Data Stream — two heaps"
+difficulty = "hard"
+tags = ["neetcode", "heap"]
+hints = [
+  "Use two heaps: `small` (max-heap for smaller half) and `large` (min-heap for larger half).",
+  "Keep sizes balanced: len(small) == len(large) or len(small) == len(large) + 1."
+]

@@ -1,0 +1,51 @@
+title = "Trees & BST (NeetCode)"
+
+[[exercises]]
+name = "invert_binary_tree"
+title = "Invert Binary Tree — swap subtrees"
+difficulty = "easy"
+tags = ["neetcode", "trees"]
+hints = [
+  "Base case: if root is None, return None.",
+  "Swap `root.left` and `root.right`, then recursively invert both."
+]
+
+[[exercises]]
+name = "maximum_depth_of_binary_tree"
+title = "Maximum Depth of Binary Tree — recursive DFS"
+difficulty = "easy"
+tags = ["neetcode", "trees"]
+hints = [
+  "Base case: None returns 0.",
+  "Recursive formula: `1 + max(max_depth(root.left), max_depth(root.right))`."
+]
+
+[[exercises]]
+name = "level_order_traversal"
+title = "Binary Tree Level Order Traversal — BFS with deque"
+difficulty = "medium"
+tags = ["neetcode", "bfs", "trees"]
+hints = [
+  "Use `collections.deque([root])`.",
+  "Process `len(queue)` nodes at each iteration to collect one level."
+]
+
+[[exercises]]
+name = "validate_binary_search_tree"
+title = "Validate Binary Search Tree — range bounds DFS"
+difficulty = "medium"
+tags = ["neetcode", "bst", "trees"]
+hints = [
+  "A node must be strictly greater than min_val and strictly less than max_val.",
+  "Recurse left with `(min_val, node.val)` and right with `(node.val, max_val)`."
+]
+
+[[exercises]]
+name = "lowest_common_ancestor_bst"
+title = "Lowest Common Ancestor of a BST — split point"
+difficulty = "medium"
+tags = ["neetcode", "bst", "trees"]
+hints = [
+  "If both p and q are less than root, LCA is in left subtree.",
+  "If both are greater than root, LCA is in right subtree. Otherwise, root is the split point (LCA)!"
+]

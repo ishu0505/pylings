@@ -1,0 +1,41 @@
+title = "Graphs (NeetCode)"
+
+[[exercises]]
+name = "number_of_islands"
+title = "Number of Islands — grid DFS/BFS"
+difficulty = "medium"
+tags = ["neetcode", "graphs"]
+hints = [
+  "Iterate through all grid cells (r, c).",
+  "When encountering '1', increment island count and run BFS/DFS to sink the island (turn '1's into '0's)."
+]
+
+[[exercises]]
+name = "rotting_oranges"
+title = "Rotting Oranges — multi-source BFS"
+difficulty = "medium"
+tags = ["neetcode", "bfs", "graphs"]
+hints = [
+  "Collect all initially rotten oranges in a deque with time 0.",
+  "Run BFS level by level. Return time when no fresh oranges remain, or -1 if impossible."
+]
+
+[[exercises]]
+name = "course_schedule"
+title = "Course Schedule — topological sort & cycle detection"
+difficulty = "medium"
+tags = ["neetcode", "graphs", "topological_sort"]
+hints = [
+  "Build adjacency list and in-degree counts for each course.",
+  "Queue courses with in-degree 0 (Kahn's algorithm). If processed courses == numCourses, valid!"
+]
+
+[[exercises]]
+name = "network_delay_time"
+title = "Network Delay Time — Dijkstra's Algorithm"
+difficulty = "medium"
+tags = ["neetcode", "dijkstra", "graphs"]
+hints = [
+  "Use a min-heap storing `(travel_time, node)`.",
+  "Keep a dict of shortest known distances. Pop smallest distance, relax edges."
+]
