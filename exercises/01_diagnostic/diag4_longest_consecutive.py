@@ -6,7 +6,6 @@ consecutive elements sequence.
 You must write an algorithm that runs in O(n) time.
 """
 
-# I AM NOT DONE
 
 # Concept Tip: Store numbers in a set. Only begin counting a streak if (num - 1)
 # is NOT in the set — that guarantees each number is visited at most twice.
@@ -14,7 +13,29 @@ You must write an algorithm that runs in O(n) time.
 
 def longest_consecutive(nums: list[int]) -> int:
     # TODO: implement in O(n)
-    raise NotImplementedError
+    num_set = set(nums)
+
+    longest = 0
+
+
+    for num in num_set:
+        if num - 1 in num_set:
+            continue
+
+        current_num = num
+        current_longest = 0
+
+        while current_num in num_set:
+            current_longest +=1
+            current_num +=1
+
+        if current_longest > longest:
+            longest = current_longest
+
+    return longest
+
+
+
 
 
 # ---------------------------------------------------------------- tests

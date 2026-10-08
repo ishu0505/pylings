@@ -11,7 +11,6 @@ If one or more fields are invalid, raise ValidationError with a dict mapping
 field name -> error description. If all valid, return None.
 """
 
-# I AM NOT DONE
 
 # Concept Tip: Aggregate errors rather than failing on the first one so the caller
 # sees everything wrong in one pass.
@@ -19,12 +18,39 @@ field name -> error description. If all valid, return None.
 
 class ValidationError(Exception):
     # TODO: implement
-    pass
+    def __init__(self, errors: dict[str,str]):
+        self.errors = errors
+        super().__init__(str(errors))
+
+
 
 
 def validate_user_payload(data: dict) -> None:
-    # TODO: implement
-    raise NotImplementedError
+    errors = {}
+    username = data.get("username")
+    age = data.get("age")
+    email = data.get("email")
+
+    if not isinstance(username, str):
+        errors["username"] = "must be text"
+    elif len(username) < 3 or len(username) > 20:
+        errors["username"] = "must be between 3 and 20 characters in length"
+    
+    if not isinstance(age, int):
+        errors["age"] = "must be present"
+    elif age < 18:
+        errors["age"] = "must be more than 18"
+
+    if not isinstance(email, str):
+        errors["email"] = "must be present"
+    elif "@" not in email:
+        errors["email"] = "must contain @"
+
+    if errors:
+        raise ValidationError(errors)
+
+
+    return errors
 
 
 # ---------------------------------------------------------------- tests

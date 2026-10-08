@@ -8,7 +8,6 @@ Build a Stack class that:
 - implements __len__, __bool__, and __repr__ (e.g. "Stack([1, 2])")
 """
 
-# I AM NOT DONE
 
 # Concept Tip: __len__ returns size; __bool__ defines truthiness; __repr__ is debugging string.
 
@@ -16,28 +15,37 @@ Build a Stack class that:
 class Stack:
     def __init__(self) -> None:
         # TODO: initialize storage
-        raise NotImplementedError
+        self._items = []
 
     def push(self, item: int) -> None:
-        raise NotImplementedError
+        self._items.append(item)
+        # raise NotImplementedError
 
     def pop(self) -> int:
-        raise NotImplementedError
+        return self._items.pop()
+        # raise NotImplementedError
 
     def peek(self) -> int:
-        raise NotImplementedError
+        # raise NotImplementedError
+        return self._items[-1]
+    
 
     def is_empty(self) -> bool:
-        raise NotImplementedError
+        if len(self._items) == 0:
+            return True
+        else:
+            return False
+        # raise NotImplementedError
 
     def __len__(self) -> int:
-        raise NotImplementedError
+        return len(self._items)
+        # raise NotImplementedError
 
     def __bool__(self) -> bool:
-        raise NotImplementedError
+        return len(self._items) > 0
 
     def __repr__(self) -> str:
-        raise NotImplementedError
+        return f"Stack({self._items})"
 
 
 # ---------------------------------------------------------------- tests

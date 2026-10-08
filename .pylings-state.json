@@ -1,8 +1,12 @@
 {
   "attempts": {
+    "basics1_truthiness": 1,
     "diag1_first_unique": 17,
     "diag2_top_k_words": 14,
-    "diag3_stack_class": 1,
+    "diag3_stack_class": 15,
+    "diag4_longest_consecutive": 9,
+    "diag5_clamp_tdd": 15,
+    "diag6_validate_user": 13,
     "intro1": 2,
     "intro2": 8,
     "intro3": 8
@@ -17,6 +21,26 @@
       "attempts": 14,
       "completed_at": "2026-10-06T23:48:25",
       "hints_used": 0
+    },
+    "diag3_stack_class": {
+      "attempts": 15,
+      "completed_at": "2026-10-07T10:04:26",
+      "hints_used": 1
+    },
+    "diag4_longest_consecutive": {
+      "attempts": 9,
+      "completed_at": "2026-10-07T15:44:02",
+      "hints_used": 0
+    },
+    "diag5_clamp_tdd": {
+      "attempts": 15,
+      "completed_at": "2026-10-07T15:55:19",
+      "hints_used": 1
+    },
+    "diag6_validate_user": {
+      "attempts": 13,
+      "completed_at": "2026-10-07T16:13:20",
+      "hints_used": 2
     },
     "intro1": {
       "attempts": 2,
@@ -37,6 +61,9 @@
   "focus": null,
   "hints_used": {
     "diag1_first_unique": 1,
+    "diag3_stack_class": 1,
+    "diag5_clamp_tdd": 1,
+    "diag6_validate_user": 2,
     "intro2": 1
   },
   "skipped": {}
